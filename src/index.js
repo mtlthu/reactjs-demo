@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom/client';
 import App from '~/App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from '~/components/GlobalStyle';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <HashRouter>
-            <GlobalStyle>
-                {/* <BrowserRouter> */}
+        <GlobalStyle>
+            <BrowserRouter>
                 <App />
-                {/* </BrowserRouter> */}
-            </GlobalStyle>
-        </HashRouter>
+            </BrowserRouter>
+        </GlobalStyle>
     </React.StrictMode>,
 );
 
