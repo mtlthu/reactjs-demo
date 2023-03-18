@@ -1,9 +1,9 @@
 const routes = {
-    home: 'reactjs-demo/',
-    following: 'reactjs-demo/following',
-    profile: 'reactjs-demo/@:nickname',
-    upload: 'reactjs-demo/upload',
-    search: 'reactjs-demo/search',
-    live: 'reactjs-demo/live',
+    home: '/',
+    following: '/following',
+    profile: '/@:nickname',
+    upload: '/upload',
+    search: '/search',
+    live: '/live',
 };
 export default routes;
