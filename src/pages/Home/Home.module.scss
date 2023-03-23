@@ -1,0 +1,307 @@
+.wrapper {
+    --search-boder-radius: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --search-button-width: 52px;
+
+    width: 100%;
+    height: var(--default-layout-header-height);
+
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+    position: relative;
+    max-width: 692px;
+    padding-bottom: 90%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+// .wrapperHome {
+//     padding-bottom: 72%;
+//     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+// }
+
+.inner {
+    height: 100%;
+    width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-spacer);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: flex;
+}
+.custom-login {
+    color: rebeccapurple;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    font-style: 2rem;
+    margin-left: 24px;
+    background-color: transparent;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.action-btn {
+    position: relative;
+    display: flex;
+    font-size: 2.2rem;
+    color: #161823;
+    background-color: transparent;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.follow-btn {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: rgba(254, 44, 85, 1);
+    border-color: rgba(254, 44, 85, 1);
+    background-color: rgba(255, 255, 255, 1);
+    min-width: 106px;
+    min-height: 28px;
+    font-size: 1.6rem;
+    line-height: 22px;
+    font-weight: 600;
+    font-family: ProximaNova, PingFangSC, sans-serif;
+    display: flex;
+    position: relative;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    right: 0;
+    position: absolute;
+
+    min-width: 88px;
+    padding: 0 10px;
+}
+.user-avatar {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: 'ProximaNova', sans-serif;
+    background-color: var(--primary);
+}
+
+.divWrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    word-break: break-word;
+    max-width: 510px;
+}
+.divVideoWrapper {
+    display: flex;
+    position: relative;
+}
+
+.divVideoCardContainer {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-background-size: cover;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+    max-height: 600px;
+    max-width: 510px;
+}
+.divActionItemContainer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 76%;
+}
+.spanIconPlayWrapper {
+    border: none;
+    outline: none;
+    padding: 0;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    bottom: 0;
+    color: #fff;
+}
+.spanIconWrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 0px;
+    border-radius: 50%;
+    -webkit-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms;
+    background-color: rgba(22, 24, 35, 0.06);
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+.buttonActionItem {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.divPlayIconContainer-StyledDivPlayIconContainer {
+    left: 12px;
+    // position: absolute;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    // -webkit-transition: opacity 0.3s;
+    // transition: opacity 0.3s;
+    // opacity: 0;
+    // bottom: 20%;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    // position: fixed;
+    bottom: 6%;
+    opacity: 0.3;
+}
+.divVideoPlayerContainer {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-background-size: cover;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+    max-height: 600px;
+}
+.divVoiceControlContainer {
+    position: absolute;
+    // left: unset;
+    right: 12px;
+}
+.divMuteIconContainer {
+    right: 12px;
+    position: absolute;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s;
+    opacity: 0;
+    bottom: 20%;
+    z-index: 3;
+}
+
+.divActionItemContainerTest {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    // position: fixed;
+    bottom: 30%;
+    opacity: 0.3;
+    // padding-top: 40%;
+}
+.buttonActionItemTest {
+    border: none;
+    outline: none;
+    padding: 0;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.icon-pause {
+    display: none;
+}
+.divVideoPlayerContainer.playing .icon-pause {
+    display: inline-block;
+}
+
+.divVideoPlayerContainer.playing .icon-play {
+    display: none;
+}
