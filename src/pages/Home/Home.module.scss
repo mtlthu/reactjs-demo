@@ -217,19 +217,13 @@
 
 .divPlayIconContainer-StyledDivPlayIconContainer {
     left: 12px;
-    // position: absolute;
     padding: 10px;
     width: 40px;
     height: 40px;
-    // -webkit-transition: opacity 0.3s;
-    // transition: opacity 0.3s;
-    // opacity: 0;
-    // bottom: 20%;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
     position: absolute;
-    // position: fixed;
     bottom: 6%;
     opacity: 0.3;
 }
@@ -295,13 +289,19 @@
     bottom: 0;
 }
 
-// .icon-pause {
-//     display: none;
-// }
-// .divVideoPlayerContainer.playing .icon-pause {
-//     display: inline-block;
-// }
-
-// .divVideoPlayerContainer.playing .icon-play {
-//     display: none;
-// }
+.PReportText {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    right: 32px;
+    position: absolute;
+    top: 24px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0.4;
+}
+.SvgIconFlag {
+    margin-right: 4px;
+    vertical-align: middle;
+}
