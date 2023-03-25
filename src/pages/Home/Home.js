@@ -1,69 +1,40 @@
+import { usePrefersReducedMotion } from '@chakra-ui/react';
+import { useState, useRef, useEffect } from 'react';
+
 import Video from '~/video';
-import { useRef } from 'react';
 import video1 from '~/videos/video-1.mp4';
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-// import Tippy from '@tippyjs/react';
-// import 'tippy.js/dist/tippy.css';
-// import AccountPreview from '~/components/SuggestedAccounts/AccountPreview';
-// import { Wrapper as PopperWrapper } from '~/components/Popper';
-
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-const $ = document.querySelector.bind(document);
-const divVideoPlayerContainer = $('.divVideoPlayerContainer');
+function Home({ src, play = true, ...rest }) {
+    const prefersReducedMotion = usePrefersReducedMotion();
+    const [playing, setPlaying] = useState(!prefersReducedMotion);
+    const videoRef = useRef();
 
-function Home() {
-    // let isPlaying = false;
-    const videoRef = useRef(video1);
-    const vidButtonRef = useRef(null);
-    console.log(videoRef.current);
-    console.log(divVideoPlayerContainer);
-    //const { noControls, src } = props;
-    const handlePlay = () => {
-        videoRef.current.play();
-        // hide overlay play button styles, set by 'video__play-button'
-        // vidButtonRef.current.classList.add('is-playing');
-    };
-    const handlePause = () => {
-        videoRef.current.pause();
-        // show overlay play button styles, set by 'video__play-button'
-        vidButtonRef.current.classList.remove('is-playing');
-    };
-    // const handleToggleVideo = () => (videoRef.current.paused ? handlePlay() : handlePause());
+    useEffect(() => {
+        if (!videoRef.current) return;
 
-    // const handlePlay = () => {
-    //     videoRef.current.play();
-    // };
-    // const handlePause = () => {
-    //     videoRef.current.pause();
-    // };
-    // const handOnClick = function () {
-    //     if (isPlaying) {
-    //         videoRef.current.pause();
-    //         isPlaying = false;
-    //         divVideoPlayerContainer.classList.remove('playing');
-    //     } else {
-    //         videoRef.current.play();
-    //         isPlaying = true;
-    //         divVideoPlayerContainer.classList.add('playing');
-    //     }
-    // };
-    // //khi bai hat duoc play
-    // audio.onplay = function () {
-    //     _this.isPlaying = true;
-    //     player.classList.add('playing');
-    //     cdThumbAnimate.play();
-    // };
-    // //khi bai hat bi dung lai
-    // audio.onpause = function () {
-    //     _this.isPlaying = false;
-    //     player.classList.remove('playing');
-    //     cdThumbAnimate.pause();
-    // };
+        if (!play) {
+            setPlaying(false);
+            videoRef.current.pause();
+        } else {
+            setPlaying(true);
+            videoRef.current.play();
+        }
+    }, [play]);
+
+    const togglePlaying = (event) => {
+        event.preventDefault();
+
+        if (!playing) {
+            setPlaying(true);
+            videoRef.current.play();
+        } else {
+            setPlaying(false);
+            videoRef.current.pause();
+        }
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -81,7 +52,9 @@ function Home() {
             <div>
                 <div>
                     <div className={cx('nickname')}>
-                        <a href="/@maithilethu">maithilethu</a>
+                        <a href="/@maithilethu">
+                            <strong>maithilethu</strong>
+                        </a>
                         <a href="/@maithilethu">Mai Thị Lệ Thu</a>
                         <button className={cx('follow-btn')}>Follow</button>
                     </div>
@@ -110,7 +83,7 @@ function Home() {
                                 width="1em"
                                 height="1em"
                             >
-                                {/* <use xlink:href="#svg-music-note"></use> */}
+                                <use xlinkHref="#svg-music-note"></use>
                             </svg>
                             nhạc nền - Thanh Sam
                         </a>
@@ -120,7 +93,7 @@ function Home() {
                     <div className={cx('divVideoCardContainer')}>
                         <div className={cx('divVideoPlayerContainer')}>
                             <Video ref={videoRef} noControls src={video1} vidButtonRef />
-                            {/* <div
+                            <div
                                 tabIndex={0}
                                 role="button"
                                 aria-label="play"
@@ -128,43 +101,37 @@ function Home() {
                                 className={cx('divPlayIconContainer-StyledDivPlayIconContainer')}
                             >
                                 <span className={cx('spanIconPlayWrapper')}>
-                                    <span className={cx('icon-play')}>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="32"
-                                            height="32"
-                                            fill="White"
-                                            class="bi bi-play-fill"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                                        </svg>
-                                    </span>
+                                    {playing ? (
+                                        <span className={cx('icon-play')}>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="32"
+                                                height="32"
+                                                fill="White"
+                                                class="bi bi-play-fill"
+                                                viewBox="0 0 24 24"
+                                                onClick={togglePlaying}
+                                            >
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                            </svg>
+                                        </span>
+                                    ) : (
+                                        <span className={cx('icon-pause')}>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="32"
+                                                height="32"
+                                                fill="White"
+                                                class="bi bi-pause-fill"
+                                                viewBox="0 0 24 24"
+                                                onClick={togglePlaying}
+                                            >
+                                                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+                                            </svg>
+                                        </span>
+                                    )}
                                 </span>
-                            </div> */}
-                            {/* <div
-                                tabIndex={0}
-                                role="button"
-                                aria-label="Pause"
-                                aria-pressed="true"
-                                className={cx('divPlayIconContainer-StyledDivPlayIconContainer')}
-                            >
-                                <span className={cx('spanIconPlayWrapper')}>
-                                    <span className={cx('icon-pause')}>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="32"
-                                            height="32"
-                                            fill="White"
-                                            class="bi bi-pause-fill"
-                                            viewBox="0 0 24 24"
-                                            onClick={handlePause}
-                                        >
-                                            <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
-                                        </svg>
-                                    </span>
-                                </span>
-                            </div> */}
+                            </div>
                             <div
                                 role="button"
                                 aria-label="Pause"
