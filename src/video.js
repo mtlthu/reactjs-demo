@@ -9,9 +9,7 @@ function Video(props, ref) {
     if (muted) {
         mutedParam = 'muted';
     }
-    if (volume) {
-        volumeParam = 'volume';
-    }
+
     useImperativeHandle(ref, () => ({
         play() {
             videoRef.current.play();
@@ -19,8 +17,9 @@ function Video(props, ref) {
         pause() {
             videoRef.current.pause();
         },
+        volume,
     }));
-    return <video muted={mutedParam} volume={volumeParam} ref={videoRef} src={video1} width={400} />;
+    return <video muted={mutedParam} volume ref={videoRef} src={video1} width={400} />;
 }
 
 export default forwardRef(Video);

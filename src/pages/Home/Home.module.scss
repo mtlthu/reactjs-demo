@@ -244,7 +244,6 @@
 }
 .divVoiceControlContainer {
     position: absolute;
-    // left: unset;
     right: 12px;
 }
 .divMuteIconContainer {
@@ -264,10 +263,8 @@
     -ms-flex-direction: column;
     flex-direction: column;
     position: absolute;
-    // position: fixed;
     bottom: 30%;
     opacity: 0.3;
-    // padding-top: 40%;
 }
 .buttonActionItemTest {
     border: none;
@@ -334,17 +331,20 @@
     border-radius: 4px;
 }
 .divVolumeControlCircle {
-    width: 12px;
-    height: 12px;
-    background-color: rgb(255, 255, 255);
+    width: 2px;
+    height: 48px;
+    background-color: rgb(255, 255, 255) !important;
     border-radius: 12px;
     position: absolute;
-    left: 6px;
+    left: 11px;
     bottom: 8px;
     cursor: pointer;
-    transform: translateY(0px);
-    z-index: 1;
+    z-index: 10;
+    appearance: slider-vertical;
+    opacity: 0.4;
+    color: #fff !important;
 }
+
 .divVolumeControlBar {
     width: 2px;
     height: 48px;
