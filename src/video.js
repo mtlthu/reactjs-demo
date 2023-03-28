@@ -1,14 +1,17 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
-import { usePrefersReducedMotion } from '@chakra-ui/react';
 import video1 from './videos/video-1.mp4';
 
-import PropTypes from 'prop-types';
-import styles from '~/pages/Home/Home.module.scss';
-import classNames from 'classnames/bind';
-const cx = classNames.bind(styles);
-
 function Video(props, ref) {
+    const { muted, volume } = props;
     const videoRef = useRef();
+    let mutedParam = '';
+    let volumeParam = '';
+    if (muted) {
+        mutedParam = 'muted';
+    }
+    if (volume) {
+        volumeParam = 'volume';
+    }
     useImperativeHandle(ref, () => ({
         play() {
             videoRef.current.play();
@@ -17,7 +20,7 @@ function Video(props, ref) {
             videoRef.current.pause();
         },
     }));
-    return <video ref={videoRef} src={video1} width={400} />;
+    return <video muted={mutedParam} volume={volumeParam} ref={videoRef} src={video1} width={400} />;
 }
 
 export default forwardRef(Video);
