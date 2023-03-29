@@ -1,5 +1,5 @@
 const routes = {
-    home: 'reactjs-demo/',
+    home: '/',
     following: 'reactjs-demo/following',
     profile: 'reactjs-demo/@:nickname',
     upload: 'reactjs-demo/upload',
