@@ -5,7 +5,6 @@ function Video(props, ref) {
     const { muted, volume } = props;
     const videoRef = useRef();
     let mutedParam = '';
-    let volumeParam = '';
     if (muted) {
         mutedParam = 'muted';
     }

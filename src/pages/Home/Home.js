@@ -1,12 +1,10 @@
 import { usePrefersReducedMotion } from '@chakra-ui/react';
 import { useState, useRef, useEffect } from 'react';
-import Slider from 'react-input-slider';
 
 import Video from '~/video';
 import video1 from '~/videos/video-1.mp4';
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
-//import Slider from 'react-rangeslider';
 const cx = classNames.bind(styles);
 
 function Home({ muted, volume, src, play = true, ...rest }) {
@@ -46,7 +44,7 @@ function Home({ muted, volume, src, play = true, ...rest }) {
     const handleVolumeChange = (e) => {
         let currentVolume;
         currentVolume = setEditVolume(e.target.value);
-        if (e.target.value == 0) {
+        if (e.target.value === 0) {
             setIsMuted(false);
         } else {
             setIsMuted(true);
