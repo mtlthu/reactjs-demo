@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reactjs-demo/static/css/main.53d5a88c.css",
-    "main.js": "/reactjs-demo/static/js/main.b8117c77.js",
+    "main.js": "/reactjs-demo/static/js/main.08fe01ce.js",
     "static/js/787.b639a160.chunk.js": "/reactjs-demo/static/js/787.b639a160.chunk.js",
     "static/media/video-1.mp4": "/reactjs-demo/static/media/video-1.b4f9f0260490a7a1a765.mp4",
     "static/media/ProximaNova-Semibold.woff2": "/reactjs-demo/static/media/ProximaNova-Semibold.db7972dbe0b808f96bae.woff2",
@@ -12,11 +12,11 @@
     "static/media/logo.svg": "/reactjs-demo/static/media/logo.14b216f9a9855279b3a15830bc19133d.svg",
     "index.html": "/reactjs-demo/index.html",
     "main.53d5a88c.css.map": "/reactjs-demo/static/css/main.53d5a88c.css.map",
-    "main.b8117c77.js.map": "/reactjs-demo/static/js/main.b8117c77.js.map",
+    "main.08fe01ce.js.map": "/reactjs-demo/static/js/main.08fe01ce.js.map",
     "787.b639a160.chunk.js.map": "/reactjs-demo/static/js/787.b639a160.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.53d5a88c.css",
-    "static/js/main.b8117c77.js"
+    "static/js/main.08fe01ce.js"
   ]
 }
