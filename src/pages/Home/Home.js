@@ -1,6 +1,7 @@
 import { usePrefersReducedMotion } from '@chakra-ui/react';
 import { useState, useRef, useEffect } from 'react';
 
+import images from '~/assets/images';
 import Video from '~/video';
 import video1 from '~/videos/video-1.mp4';
 import styles from './Home.module.scss';
@@ -57,11 +58,7 @@ function Home({ muted, volume, src, play = true, ...rest }) {
             <a href="/@maithilethu">
                 <div>
                     <span>
-                        <img
-                            className={cx('user-avatar')}
-                            src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/6cce65b73a19a3c3a58c2a0f3605eff1~c5_100x100.jpeg?x-expires=1679630400&x-signature=CuxLhE9vW2Ik5EwpboBi71G7xnc%3D"
-                            alt=""
-                        />
+                        <img className={cx('user-avatar')} src={images.image1} alt="" />
                     </span>
                 </div>
             </a>

@@ -213,7 +213,7 @@ function Header() {
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/e6fbccfe920afeb2bdfabdfb472dda06~c5_720x720.jpeg?x-expires=1669874400&x-signature=CirrUjfFicAZOsebJZGP3aKXHoM%3D1"
                                 className={cx('user-avatar')}
                                 alt="Nguyen van a"
-                                fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                                // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
