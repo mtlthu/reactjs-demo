@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/reactjs-demo/static/css/main.4f579ff6.css",
-    "main.js": "/reactjs-demo/static/js/main.ee83e1c3.js",
+    "main.css": "/reactjs-demo/static/css/main.53d5a88c.css",
+    "main.js": "/reactjs-demo/static/js/main.b8117c77.js",
     "static/js/787.b639a160.chunk.js": "/reactjs-demo/static/js/787.b639a160.chunk.js",
     "static/media/video-1.mp4": "/reactjs-demo/static/media/video-1.b4f9f0260490a7a1a765.mp4",
+    "static/media/ProximaNova-Semibold.woff2": "/reactjs-demo/static/media/ProximaNova-Semibold.db7972dbe0b808f96bae.woff2",
+    "static/media/sofiapro-bold.woff2": "/reactjs-demo/static/media/sofiapro-bold.1d7186488612ac20891f.woff2",
+    "static/media/Proxima-Nova-Bold.woff2": "/reactjs-demo/static/media/Proxima-Nova-Bold.8dd475cbc90552d85f91.woff2",
+    "static/media/Proxima-Nova-Regular.woff2": "/reactjs-demo/static/media/Proxima-Nova-Regular.6c83037ae28747e6d774.woff2",
+    "static/media/Proxima-Nova-Semibold.woff2": "/reactjs-demo/static/media/Proxima-Nova-Semibold.c5632e80f6e35c93156f.woff2",
     "static/media/logo.svg": "/reactjs-demo/static/media/logo.14b216f9a9855279b3a15830bc19133d.svg",
     "index.html": "/reactjs-demo/index.html",
-    "main.4f579ff6.css.map": "/reactjs-demo/static/css/main.4f579ff6.css.map",
-    "main.ee83e1c3.js.map": "/reactjs-demo/static/js/main.ee83e1c3.js.map",
+    "main.53d5a88c.css.map": "/reactjs-demo/static/css/main.53d5a88c.css.map",
+    "main.b8117c77.js.map": "/reactjs-demo/static/js/main.b8117c77.js.map",
     "787.b639a160.chunk.js.map": "/reactjs-demo/static/js/787.b639a160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f579ff6.css",
-    "static/js/main.ee83e1c3.js"
+    "static/css/main.53d5a88c.css",
+    "static/js/main.b8117c77.js"
   ]
 }
