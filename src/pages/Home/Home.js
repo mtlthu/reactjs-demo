@@ -44,7 +44,7 @@ function Home({ muted, volume, src, play = true, ...rest }) {
     const handleVolumeChange = (e) => {
         let currentVolume;
         currentVolume = setEditVolume(e.target.value);
-        if (e.target.value === 0) {
+        if (e.target.value == 0) {
             setIsMuted(false);
         } else {
             setIsMuted(true);
