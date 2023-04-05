@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import listVideos from '~/assets/videos/';
 import images from '~/assets/images';
 import Video from '~/components/Video/Video';
 import styles from './Home.module.scss';
@@ -9,7 +10,7 @@ const cx = classNames.bind(styles);
 function Home() {
     const [videos] = useState([
         {
-            url: 'https://res.cloudinary.com/codelife/video/upload/v1633232723/tiktok-clone/tiktok2_qxafx3.mp4',
+            url: listVideos.video2,
             channel: 'DanceCrew',
             image: images.image1,
             description: 'Video by Lara Jameson from Pexels',

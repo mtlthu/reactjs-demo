@@ -6,12 +6,13 @@ import styles from './Video.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
-const Video = ({ url, channel, image, description, song, likes, messages, shares }) => {
+const Video = ({ url, channel, image, defaultFollow = false, description, song, likes, messages, shares }) => {
     const [playing, setPlaying] = useState(false);
     const videoRef = useRef(null);
     const [isMuted, setIsMuted] = useState(true);
     const [editVolume, setEditVolume] = useState(1);
     const [liked, setLiked] = useState(false);
+    const [follow, setFollow] = useState(defaultFollow);
     const options = {
         root: null,
         rootMargin: '0px',
@@ -30,7 +31,7 @@ const Video = ({ url, channel, image, description, song, likes, messages, shares
                 setPlaying(false);
             }
         }
-    }, [isVisible]);
+    }, [isVisible, playing]);
     const togglePlaying = (event) => {
         event.preventDefault();
 
@@ -73,7 +74,27 @@ const Video = ({ url, channel, image, description, song, likes, messages, shares
                             <strong>{channel}</strong>
                         </a>
                         <a href="/@channel">{channel}</a>
-                        <button className={cx('follow-btn')}>Follow</button>
+                        <span>
+                            {follow ? (
+                                <button
+                                    className={cx('following-btn')}
+                                    onClick={() => {
+                                        setFollow(!follow);
+                                    }}
+                                >
+                                    Following
+                                </button>
+                            ) : (
+                                <button
+                                    className={cx('follow-btn')}
+                                    onClick={() => {
+                                        setFollow(!follow);
+                                    }}
+                                >
+                                    Follow
+                                </button>
+                            )}
+                        </span>
                     </div>
                     <div className={cx('divWrapper')}>
                         <span>{description} </span>
@@ -82,7 +103,7 @@ const Video = ({ url, channel, image, description, song, likes, messages, shares
                         </a>
                     </div>
                     <h4>
-                        <a aria-label="Watch more videos with music nhạc nền  - Thanh Sam" href="">
+                        <a href={song}>
                             <span className={cx('divMusic')}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
