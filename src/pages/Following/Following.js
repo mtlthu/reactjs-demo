@@ -2,7 +2,7 @@ import { usePrefersReducedMotion } from '@chakra-ui/react';
 import { useState, useRef, useEffect } from 'react';
 
 import images from '~/assets/images';
-import Video from '~/video';
+import Video from '~/components/Video/Video';
 import video1 from '~/videos/video-1.mp4';
 import styles from './Following.module.scss';
 import classNames from 'classnames/bind';
