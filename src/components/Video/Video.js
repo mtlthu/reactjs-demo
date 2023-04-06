@@ -1,18 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, Fragment } from 'react';
 import './Video.module.scss';
 
+import Share from './Share';
 import { useElementOnScreen } from '~/hooks';
 import styles from './Video.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const Video = ({ url, channel, image, defaultFollow = false, description, song, likes, messages, shares }) => {
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
     const videoRef = useRef(null);
     const [isMuted, setIsMuted] = useState(true);
     const [editVolume, setEditVolume] = useState(1);
     const [liked, setLiked] = useState(false);
     const [follow, setFollow] = useState(defaultFollow);
+    const [shareIcon, setShareIcon] = useState(false);
     const options = {
         root: null,
         rootMargin: '0px',
@@ -31,7 +33,7 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                 setPlaying(false);
             }
         }
-    }, [isVisible, playing]);
+    }, [isVisible]);
     const togglePlaying = (event) => {
         event.preventDefault();
 
@@ -336,6 +338,9 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                             aria-label="Like video727.6K likes"
                             aria-pressed="false"
                             className={cx('buttonActionItem')}
+                            onClick={() => {
+                                setShareIcon(!shareIcon);
+                            }}
                         >
                             <span className={cx('spanIconWrapper')}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
@@ -343,6 +348,7 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                                 </svg>
                             </span>
                             <strong data-e2e="like-count">{shares}</strong>
+                            {shareIcon ? <Share /> : Fragment}
                         </button>
                     </div>
                 </div>

@@ -1,0 +1,41 @@
+.DivContainer {
+    position: absolute;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    bottom: calc(100% + 12px);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    transition: opacity 300ms ease 0s;
+    opacity: 1;
+    transform: translateY(8px);
+}
+
+.StyledTopArrow {
+    display: block;
+    width: 24px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    transform: rotate(180deg);
+}
+
+.DivShareWrapper {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    width: 280px;
+    padding: 8px 0px;
+    max-height: 448px;
+    overflow: auto;
+}
+.AShareLink {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 11px 16px;
+    margin: 0px 3px 0px 4px;
+    position: relative;
+}
+.SpanShareText {
+    margin-left: 12px;
+}
