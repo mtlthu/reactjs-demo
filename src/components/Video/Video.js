@@ -15,6 +15,7 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
     const [liked, setLiked] = useState(false);
     const [follow, setFollow] = useState(defaultFollow);
     const [shareIcon, setShareIcon] = useState(false);
+    const [hover, setHover] = useState(false);
     const options = {
         root: null,
         rootMargin: '0px',
@@ -48,6 +49,10 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
 
     const handleMute = () => {
         setIsMuted(!isMuted);
+    };
+    const handleShareIcon = () => {
+        setShareIcon(!shareIcon);
+        console.log('SI', shareIcon);
     };
     const handleVolumeChange = (e) => {
         let currentVolume;
@@ -338,8 +343,14 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                             aria-label="Like video727.6K likes"
                             aria-pressed="false"
                             className={cx('buttonActionItem')}
-                            onClick={() => {
-                                setShareIcon(!shareIcon);
+                            onClick={handleShareIcon}
+                            onMouseOver={(e) => {
+                                e.preventDefault();
+                                setHover(true);
+                            }}
+                            onMouseLeave={(e) => {
+                                e.preventDefault();
+                                setHover(false);
                             }}
                         >
                             <span className={cx('spanIconWrapper')}>
@@ -348,7 +359,7 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                                 </svg>
                             </span>
                             <strong data-e2e="like-count">{shares}</strong>
-                            {shareIcon ? <Share /> : Fragment}
+                            {hover ? <Share shareIcon={shareIcon} /> : Fragment}
                         </button>
                     </div>
                 </div>
