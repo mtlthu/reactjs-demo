@@ -16,6 +16,8 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
     const [follow, setFollow] = useState(defaultFollow);
     const [shareIcon, setShareIcon] = useState(false);
     const [hover, setHover] = useState(false);
+    const [volumeControl, setVolumeControl] = useState(false);
+    //VolumeControl
     const options = {
         root: null,
         rootMargin: '0px',
@@ -180,23 +182,38 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                                 </span>
                             </div>
 
-                            <div className={cx('divVoiceControlContainer')}>
-                                <div className={cx('divVolumeControlContainer')}>
-                                    <div className={cx('divVolumeControlProgress')} onChange={handleVolumeChange}></div>
-                                    <div>
-                                        <input
-                                            className={cx('divVolumeControlCircle')}
-                                            type={'range'}
-                                            min={0}
-                                            max={100}
-                                            value={editVolume}
-                                            step={1}
+                            <div
+                                className={cx('divVoiceControlContainer')}
+                                onMouseOver={(e) => {
+                                    e.preventDefault();
+                                    setVolumeControl(true);
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.preventDefault();
+                                    setVolumeControl(false);
+                                }}
+                            >
+                                {volumeControl ? (
+                                    <div className={cx('divVolumeControlContainer')}>
+                                        <div
+                                            className={cx('divVolumeControlProgress')}
                                             onChange={handleVolumeChange}
-                                        />
+                                        ></div>
+                                        <div>
+                                            <input
+                                                className={cx('divVolumeControlCircle')}
+                                                type={'range'}
+                                                min={0}
+                                                max={100}
+                                                value={editVolume}
+                                                step={1}
+                                                onChange={handleVolumeChange}
+                                            />
+                                        </div>
+                                        <div className={cx('divVolumeControlBar')}></div>
                                     </div>
-                                    <div className={cx('divVolumeControlBar')}></div>
-                                </div>
-                                <div>
+                                ) : null}
+                                <div className={cx('divVolumeMute')}>
                                     {isMuted ? (
                                         <div
                                             data-e2e="video-sound"
@@ -343,6 +360,7 @@ const Video = ({ url, channel, image, defaultFollow = false, description, song, 
                             aria-label="Like video727.6K likes"
                             aria-pressed="false"
                             className={cx('buttonActionItem')}
+                            id={cx('idShareIcon')}
                             onClick={handleShareIcon}
                             onMouseOver={(e) => {
                                 e.preventDefault();

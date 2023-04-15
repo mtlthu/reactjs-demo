@@ -1,5 +1,165 @@
 .wrapper {
-  width: 356px;
-  padding: 20px 0 26px 8px;
-  margin-left: -18px;
+    width: 240px;
+    padding: 50px 0 26px 8px;
+    margin-left: -18px;
+    position: fixed;
+    overflow-y: auto;
+    padding-left: 20px;
+}
+.DivDiscoverContainer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 8px 8px;
+}
+.H2DiscoverTitle {
+    color: rgba(22, 24, 35, 0.75);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+}
+.UlDiscoverListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.StyledLink-StyledTmpLink {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+}
+.LiDiscoverItemContainer {
+    display: flex;
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    height: 24px;
+    margin-bottom: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(22, 24, 35, 0.2);
+    border-radius: 12px;
+    background: rgb(255, 255, 255);
+    transition: background 200ms ease-in-out 0s;
+    margin-right: 8px;
+}
+.StyledNumber {
+    flex-shrink: 0;
+}
+.PText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 6px;
+}
+.DivDiscoverContainer::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: calc(100% - 16px);
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+}
+.DivPlaceholder {
+    -webkit-flex: 1 1 0px;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0px;
+}
+.DivFooterContainer {
+    position: relative;
+    padding-top: 16px;
+    padding-left: 8px;
+}
+
+.DivFooterContainer::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.DivLinkContainer {
+    margin-bottom: 8px;
+}
+.ALink-StyledNavLink:hover.ALink-StyledNavLink:active.ALink-StyledNavLink:link.ALink-StyledNavLink:visited {
+    color: rgba(22, 24, 35, 0.5);
+}
+.ALink-StyledNavLink {
+    color: rgba(22, 24, 35, 0.5);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+}
+.SpanCopyright {
+    color: rgba(22, 24, 35, 0.5);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+}
+.DivScrollContainer-StyledScroll:hover .e1b4u1n0 {
+    opacity: 1;
+}
+.DivScrollBar {
+    position: absolute;
+    padding: 0 4px;
+    top: 0;
+    transform-origin: right top;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 0;
+    right: 0;
+    transform-origin: right top;
+    height: 443.84px;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1) scale(1.72585) translateZ(-0.725849px)
+        translateZ(-2px);
+}
+.DivScrollBarThumb {
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    background: rgba(22, 24, 35, 0.06);
+}
+
+.DivScrollContainer-StyledScroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    padding-right: 12px;
+    perspective-origin: right top;
+    top: 60px;
+    bottom: 0;
+    width: 240px;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+}
+.StyledMusicNote {
+    flex-shrink: 0;
 }

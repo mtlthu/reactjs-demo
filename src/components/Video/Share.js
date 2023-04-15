@@ -12,6 +12,7 @@ function Share(props) {
         e.preventDefault();
         setLoadMore(!loadMore);
         e.preventDefault();
+        // props.shareIcon = !props.shareIcon;
     };
     return (
         <div
@@ -31,7 +32,7 @@ function Share(props) {
                 {/* <use xlink:href="#tip_arrow_white-99f4b53c"></use> */}
             </svg>
             <div data-e2e="feed-share-group" className={cx('DivShareWrapper')}>
-                {props.shareIcon ? (
+                {!props.shareIcon ? (
                     <>
                         <a
                             id="icon-element-embed"
@@ -605,7 +606,7 @@ function Share(props) {
                             </svg>
                             <span className={cx('SpanShareText')}>Share to Pinterest</span>
                         </a>
-                        <a
+                        {/* <a
                             data-e2e="share-arrow"
                             aria-label="More share options"
                             href="#"
@@ -625,7 +626,7 @@ function Share(props) {
                                     d="M21.8788 33.1213L7.58586 18.8284C7.19534 18.4379 7.19534 17.8047 7.58586 17.4142L10.4143 14.5858C10.8048 14.1953 11.438 14.1953 11.8285 14.5858L24.0001 26.7574L36.1716 14.5858C36.5622 14.1953 37.1953 14.1953 37.5859 14.5858L40.4143 17.4142C40.8048 17.8047 40.8048 18.4379 40.4143 18.8284L26.1214 33.1213C24.9498 34.2929 23.0503 34.2929 21.8788 33.1213Z"
                                 ></path>
                             </svg>
-                        </a>
+                        </a> */}
                     </>
                 )}
             </div>

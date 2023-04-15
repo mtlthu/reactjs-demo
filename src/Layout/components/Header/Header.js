@@ -12,7 +12,7 @@ import {
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Button from '~/components/Button';
@@ -142,8 +142,8 @@ const MENU_ITEMS = [
 function Header() {
     const currentUser = true;
     const [focusLockInbox, setFocusLockInbox] = useState(false);
-    const [dataFocusDisable, setDataFocusDisable] = useState(false);
-
+    const [isOpenInbox, setIsOpenInbox] = useState(false);
+    const inboxRef = useRef();
     // Handle logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -153,13 +153,25 @@ function Header() {
             default:
         }
     };
+
+    console.log('inboxRef', inboxRef);
+
+    useEffect(() => {
+        const handleClosePopup = (e) => {
+            console.log(inboxRef.current);
+            console.log(e);
+            if (inboxRef.current && !inboxRef.current.contains(e.target)) {
+                setFocusLockInbox(false);
+                console.log('show', focusLockInbox);
+            }
+        };
+        document.body.addEventListener('click', handleClosePopup);
+        return () => document.body.removeEventListener('click', handleClosePopup);
+    }, [focusLockInbox]);
     const handleInboxClick = () => {
         setFocusLockInbox(!focusLockInbox);
+        console.log('focus', focusLockInbox);
     };
-    const handleDataDisable = () => {
-        setDataFocusDisable(!focusLockInbox);
-    };
-
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
@@ -207,13 +219,17 @@ function Header() {
                                     <MessageIcon />
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
-                                <button className={cx('action-btn')} onClick={handleInboxClick}>
-                                    <InboxIcon />
-                                    <span className={cx('badge')}>12</span>
-                                    {focusLockInbox ? <InboxNotifications /> : Fragment}
-                                </button>
-                            </Tippy>
+                            <span ref={inboxRef} className={cx('inbox')}>
+                                <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
+                                    <>
+                                        <button className={cx('action-btn')} onClick={handleInboxClick}>
+                                            <InboxIcon />
+                                            <span className={cx('badge')}>12</span>
+                                        </button>
+                                        {focusLockInbox ? <InboxNotifications /> : Fragment}
+                                    </>
+                                </Tippy>
+                            </span>
                         </>
                     ) : (
                         <>

@@ -1,0 +1,145 @@
+.wrapper:first-child {
+    padding-top: 60px;
+}
+
+.DivBottomContainer {
+    right: 24px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 8px;
+    transform: none;
+    transition: all 400ms cubic-bezier(0.65, 0, 0.35, 1) 0s;
+}
+.DivPromotionContainer {
+    margin-bottom: 12px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+}
+.ButtonGetAppText {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    padding: 0 8px;
+    min-width: 90px;
+    height: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 52px;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(22, 24, 35, 0.12);
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+    transform-origin: right bottom;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+}
+.DivExpandContainer {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    position: absolute;
+    bottom: -1px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.03);
+    border-radius: 8px;
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0.14, 0.3, 1);
+    transform-origin: right bottom;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    right: -1px;
+}
+.DivXMarkWrapper {
+    right: 16px;
+    position: absolute;
+    top: 16px;
+    cursor: pointer;
+}
+.DivExpandWrapper {
+    margin-right: 48px;
+    margin-left: 16px;
+}
+.DivItemContainer {
+    margin: 6px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.DivSplit {
+    width: calc(100% - 16px);
+    height: 1px;
+    position: relative;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+    left: 8px;
+}
+.DivItemContainer {
+    margin: 6px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.ButtonIconContainer {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 52px;
+    background: rgba(254, 44, 85, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
